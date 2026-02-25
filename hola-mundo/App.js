@@ -1,13 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-// CORRECCIÓN: SafeAreaView ahora viene de react-native
-import { StyleSheet, Text, View, ScrollView, SafeAreaView } from 'react-native';
+
+import { StyleSheet, Text, View, ScrollView} from 'react-native';
 import { useState } from 'react';
-// Asegúrate de que esta ruta apunte a tu carpeta src
+
 import Alumno from './src/components/Alumno'; 
 
 export default function App() {
   const alumnos = [
-    // ... (Aquí va toda la lista de alumnos que mandó tu maestra) ...
     { nombre: 'CANDELARIA MORA SAMANTHA', matricula: '2114354' },
     { nombre: 'CANTU SILVA JAVIER', matricula: '2111889' },
     {
@@ -156,7 +155,7 @@ export default function App() {
    <SafeAreaView style={estilos.container}>
       <StatusBar style="auto" />
       
-      {/* Aquí mostramos el estado dinámico */}
+      {}
       <View style={estilos.header}>
         <Text style={estilos.textoMensaje}>{mensaje}</Text>
       </View>
@@ -165,10 +164,10 @@ export default function App() {
         {alumnos.map((alumno, index) => 
           (
             <Alumno 
-              key={index} // Usamos index para evitar el error de matrículas duplicadas
+              key={index} 
               nombre={alumno.nombre} 
               matricula={alumno.matricula}
-              // Le mandamos la función "saludo" al componente Alumno
+          
               accionBoton={() => saludo(alumno.nombre)} 
             />
           )
